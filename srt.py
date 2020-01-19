@@ -8,8 +8,8 @@ class SRT(object):
         return value.arrival_time
 
     @staticmethod
-    def _sortByBurstTime(value):
-        return value.cpu_burst
+    def _sortByRemainTime(value):
+        return value.remain_time
 
     def __init__(self, processLst):
         self.processLst = processLst
@@ -17,14 +17,14 @@ class SRT(object):
         self.processExecQueue = []
 
     def _chooseProcess(self):
-        nominates = []
+        readyQueue = []
         for process in self.processLst:
             if not process.isTerminated and process.arrival_time <= self.currentTime:
-                nominates.append(process)
+                readyQueue.append(process)
 
-        nominates.sort(key=SRT._sortByBurstTime)
+        readyQueue.sort(key=SRT._sortByRemainTime)
 
-        return nominates[0]
+        return readyQueue[0]
 
     def _areAllTerminated(self):
         for process in self.processLst:
@@ -33,10 +33,21 @@ class SRT(object):
         return True
 
     def start(self):
-        currentProcess = self._chooseProcess()
-
+        print(time.time())
         while not self._areAllTerminated():
-            time.sleep(0.001)
+            currentProcess = self._chooseProcess()
+            currentProcess.start_time = self.currentTime
+            self.processExecQueue.append(currentProcess.process_id)
+            # time.sleep(0.001)
             self.currentTime += 1
-            currentProcess.
+            currentProcess.remain_time -= 1
+            if currentProcess.isFinished:
+                currentProcess.end_time = self.currentTime
+        print(time.time())
 
+
+lst = [Process(1, 0, 4000), Process(2, 0, 5000), Process(3, 1, 2000)]
+
+srt = SRT(lst)
+
+srt.start()
