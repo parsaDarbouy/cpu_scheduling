@@ -21,4 +21,4 @@ class SRT(object):
 
         nominates = []
         for process in processByArrival:
-            if
+            pass
