@@ -62,9 +62,9 @@ class SRT(object):
         output.print()
 
 
-lst = [Process(1, 0, 2), Process(2, 2, 4), Process(3, 5, 1)]
+# lst = [Process(1, 0, 2), Process(2, 2, 4), Process(3, 5, 1)]
 # lst = [Process(1, 0, 5), Process(2, 3, 3)]
 
-srt = SRT(lst)
+# srt = SRT(lst)
 
-srt.start()
+# srt.start()

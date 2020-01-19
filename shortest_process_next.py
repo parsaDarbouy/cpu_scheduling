@@ -54,8 +54,8 @@ class SPN(object):
         output.print()
 
 
-lst = [Process(1, 0, 1), Process(2, 3, 5), Process(3, 3, 4)]
+# lst = [Process(1, 0, 1), Process(2, 3, 5), Process(3, 3, 4)]
 #
-spn = SPN(lst)
+# spn = SPN(lst)
 #
-spn.start()
+# spn.start()

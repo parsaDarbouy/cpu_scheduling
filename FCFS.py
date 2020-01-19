@@ -45,4 +45,4 @@ def fcfs(x):
     return output
 
 
-fcfs(listP)
+# fcfs(listP)

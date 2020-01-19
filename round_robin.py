@@ -71,4 +71,4 @@ def r_r(x):
     return output
 
 
-r_r(listP)
+# r_r(listP)
