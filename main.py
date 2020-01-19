@@ -1,6 +1,6 @@
 from process import Process
-from spn import SPN
-from srt import SRT
+from shortest_process_next import SPN
+from shortest_remaining_time import SRT
 import pandas as pd
 
 
