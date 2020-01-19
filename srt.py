@@ -1,4 +1,4 @@
-from Process import Process
+from process import Process
 import time
 
 
