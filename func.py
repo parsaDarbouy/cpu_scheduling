@@ -69,6 +69,8 @@ def cal_utilization(list_p, end_time):
     return total_burst / end_time
 
 
+
+
 def fcfs(x):
     x.sort(key=get_arrival)
     count_done = 0
@@ -89,6 +91,7 @@ def fcfs(x):
             end_time = process.end_time
     print_process(x)
     output = Output(cal_awt(x), cal_art(x), cal_att(x), cal_utilization(x, end_time), cal_through_put(x, end_time))
+    output.print
 
     return output
 

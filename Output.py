@@ -6,3 +6,10 @@ class Output:
         self.cpu_utilization = cpu_utilization
         self.through_put = through_put
 
+    @property
+    def print(self):
+        print("A.W.T : " + str(self.A_W_T) + '\t', end=" ")
+        print("A.R.T : " + str(self.A_R_T) + '\t', end=" ")
+        print("A.T.T : " + str(self.A_T_T) + '\t', end=" ")
+        print("cpu utilization : " + str(self.cpu_utilization) + '\t', end=" ")
+        print("throughput : " + str(self.through_put) + '\t', end=" ")
