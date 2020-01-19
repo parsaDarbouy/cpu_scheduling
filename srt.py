@@ -1,4 +1,5 @@
 from Process import Process
+import time
 
 
 class SRT(object):
@@ -25,9 +26,17 @@ class SRT(object):
 
         return nominates[0]
 
+    def _areAllTerminated(self):
+        for process in self.processLst:
+            if not process.isTerminated:
+                return False
+        return True
+
     def start(self):
         currentProcess = self._chooseProcess()
 
-        while()
-
+        while not self._areAllTerminated():
+            time.sleep(0.001)
+            self.currentTime += 1
+            currentProcess.
 

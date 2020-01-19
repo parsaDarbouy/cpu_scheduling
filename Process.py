@@ -13,3 +13,9 @@ class Process:
         if self.end_time == -1:
             return False
         return True
+
+    @property
+    def isFinished(self):
+        if self.remain_time == 0:
+            return True
+        return False
