@@ -5,6 +5,6 @@ class Process:
         self.arrival_time = arrival_time
         self.cpu_burst = cpu_burst
         self.remain_time = cpu_burst
-        self.startTime = -1
-        self.endTime = -1
+        self.start_time = -1
+        self.end_time = -1
 
