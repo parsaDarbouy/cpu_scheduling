@@ -26,15 +26,10 @@ class SRT(object):
 
         return readyQueue[0]
 
-    def _areAllTerminated(self):
-        for process in self.processLst:
-            if not process.isTerminated:
-                return False
-        return True
-
     def start(self):
-        print(time.time())
-        while not self._areAllTerminated():
+        processFinishedCount = 0
+        # print(time.time())
+        while processFinishedCount != len(self.processLst):
             currentProcess = self._chooseProcess()
             currentProcess.start_time = self.currentTime
             self.processExecQueue.append(currentProcess.process_id)
@@ -43,7 +38,8 @@ class SRT(object):
             currentProcess.remain_time -= 1
             if currentProcess.isFinished:
                 currentProcess.end_time = self.currentTime
-        print(time.time())
+                processFinishedCount += 1
+        # print(time.time())
 
 
 lst = [Process(1, 0, 4000), Process(2, 0, 5000), Process(3, 1, 2000)]
