@@ -1,5 +1,5 @@
-from Process import Process
-from Output import Output
+from process import Process
+from output import Output
 
 
 def get_arrival(obj):
