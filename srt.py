@@ -12,13 +12,22 @@ class SRT(object):
 
     def __init__(self, processLst):
         self.processLst = processLst
+        self.currentTime = 0
+        self.processExecQueue = []
+
+    def _chooseProcess(self):
+        nominates = []
+        for process in self.processLst:
+            if not process.isTerminated and process.arrival_time <= self.currentTime:
+                nominates.append(process)
+
+        nominates.sort(key=SRT._sortByBurstTime)
+
+        return nominates[0]
 
     def start(self):
-        processByArrival = self.processLst.copy()
-        processByArrival.sort(key=SRT._sortByArrivalTime)
-        processByCpuBurst = self.processLst.copy()
-        processByCpuBurst.sort(key=SRT._sortByBurstTime)
+        currentProcess = self._chooseProcess()
 
-        nominates = []
-        for process in processByArrival:
-            pass
+        while()
+
+

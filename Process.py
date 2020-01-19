@@ -10,6 +10,6 @@ class Process:
 
     @property
     def isTerminated(self):
-        if self.endTime == -1:
+        if self.end_time == -1:
             return False
         return True
