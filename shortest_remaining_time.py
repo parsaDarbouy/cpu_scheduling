@@ -37,9 +37,9 @@ class SRT(object):
         print(time.time())
 
 
-lst = [Process(1, 0, 3000), Process(2, 0, 4000), Process(3, 1, 1000), Process(4, 1, 2000)]
+# lst = [Process(1, 0, 3000), Process(2, 0, 4000), Process(3, 1, 1000), Process(4, 1, 2000)]
 # lst = [Process(1, 0, 5), Process(2, 3, 3)]
-
-srt = SRT(lst)
-
-srt.start()
+#
+# srt = SRT(lst)
+#
+# srt.start()
