@@ -19,3 +19,6 @@ class Process:
         if self.remain_time == 0:
             return True
         return False
+
+    def copy(self):
+        return Process(self.process_id, self.arrival_time, self.cpu_burst)
