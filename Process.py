@@ -5,6 +5,11 @@ class Process:
         self.arrival_time = arrival_time
         self.cpu_burst = cpu_burst
         self.remain_time = cpu_burst
+        self.startTime = -1
+        self.endTime = -1
 
-    startTime = -1
-    endTime = -1
+    @property
+    def isTerminated(self):
+        if self.endTime == -1:
+            return False
+        return True
