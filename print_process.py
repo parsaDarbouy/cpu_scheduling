@@ -15,11 +15,11 @@ def print_process(list_processes):
     for i in list_processes:
         print(str(i.remain_time) + '\t', end=" ")
     print()
-    print("end_time :" + '\t\t', end=" ")
+    print("end_time :" + '\t', end=" ")
     for i in list_processes:
         print(str(i.end_time) + '\t', end=" ")
     print()
-    print("cpu_burst :" + '\t\t', end=" ")
+    print("cpu_burst :" + '\t', end=" ")
     for i in list_processes:
         print(str(i.cpu_burst) + '\t', end=" ")
     print()

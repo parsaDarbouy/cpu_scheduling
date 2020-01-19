@@ -27,7 +27,7 @@ def fcfs(x):
     end_time = -1
     while count_done != count_processes:
         process = x[index]
-        if (cpu_time < process.arrival_time):
+        if cpu_time < process.arrival_time:
             cpu_time = process.arrival_time
         process.start_time = cpu_time
         cpu_time = cpu_time + process.remain_time
