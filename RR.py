@@ -66,6 +66,7 @@ def r_r(x):
     print_process(x)
     output = Output(cal_awt(x), cal_art(x), cal_att(x), cal_utilization(x, cpu_time), cal_through_put(x, cpu_time))
     output.print
+    output.write("eggs.csv")
 
     return output
 
