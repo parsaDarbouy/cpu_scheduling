@@ -3,7 +3,7 @@ from Output import Output
 
 
 def get_arrival(obj):
-    return (obj.arrival_time, obj.process_id)
+    return obj.arrival_time, obj.process_id
 
 
 p1 = Process(1, 0, 24)
@@ -83,7 +83,7 @@ def fcfs(x):
     cpu_time = 0
     index = 0
     end_time = -1
-    while (count_done != count_processes):
+    while count_done != count_processes:
         process = x[index]
         if (cpu_time < process.arrival_time):
             cpu_time = process.arrival_time
@@ -92,13 +92,13 @@ def fcfs(x):
         process.remain_time = 0
         index = index + 1
         count_done = count_done + 1
-        if (process.remain_time == 0):
+        if process.remain_time == 0:
             process.end_time = cpu_time
-        if (end_time < process.end_time):
+        if end_time < process.end_time:
             end_time = process.end_time
     print_process(x)
     output = Output(cal_awt(x), cal_art(x), cal_att(x), cal_utilization(x, end_time), cal_through_put(x, end_time))
-    output.print
+    output.print()
 
     return output
 
