@@ -31,41 +31,42 @@ def r_r(x):
     for i in x:
         is_in_cpu.append(0)
 
-    while (count_done != count_processes):
+    while count_done != count_processes:
 
         for i in range(len(x)):
-            if (x[i].arrival_time <= cpu_time and is_in_cpu[i] == 0):
+            if x[i].arrival_time <= cpu_time and is_in_cpu[i] == 0:
                 queue.append(x[i])
                 is_in_cpu[i] = 1
         process = queue[0]
-        if (process.remain_time > q):
-            if (process.start_time == -1):
+        if process.remain_time > q:
+            if process.start_time == -1:
                 process.start_time = cpu_time
             process.remain_time = process.remain_time - q
             cpu_time = cpu_time + q
             queue.remove(process)
             queue.append(process)
         else:
-            if (process.start_time == -1):
+            if process.start_time == -1:
                 process.start_time = cpu_time
             cpu_time = cpu_time + process.remain_time
             process.remain_time = 0
             process.end_time = cpu_time
             queue.remove(process)
             count_done = count_done + 1
-        if (not len(queue)):
-            if (count_done == count_processes):
+        if not len(queue):
+            if count_done == count_processes:
                 break
             else:
                 for i in range(len(is_in_cpu)):
-                    if (is_in_cpu == 0):
+                    if is_in_cpu == 0:
                         cpu_time = x[i].arrival_time
                         queue.append(x[i])
                         is_in_cpu[i] = 1
 
     print_process(x)
     output = Output(cal_awt(x), cal_art(x), cal_att(x), cal_utilization(x, cpu_time), cal_through_put(x, cpu_time))
-    output.print
+    output.print()
+    output.write("eggs.csv")
 
     return output
 
