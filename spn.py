@@ -30,8 +30,8 @@ class SPN(object):
             processFinishedCount += 1
 
 
-lst = [Process(1, 0, 4000), Process(2, 0, 5000), Process(3, 1, 2000)]
-
-spn = SPN(lst)
-
-spn.start()
+# lst = [Process(1, 0, 4000), Process(2, 0, 5000), Process(3, 1, 2000)]
+#
+# spn = SPN(lst)
+#
+# spn.start()
